@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 
-export default class ApiScreen extends React.Component{
+export class ApiScreen extends React.Component{
 
   constructor(props){
     super(props);
