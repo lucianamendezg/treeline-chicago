@@ -1,21 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import { styles } from "./css/css";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <Text>This is a test</Text>
-      <Text>EPIC GAMING MOMENT</Text>
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import { home_screen } from './pages/HomeScreen';
+import {ProfileScreen} from './pages/ProfileScreen'
+
+
+
+const MainNavigator = createStackNavigator({
+  Home: {screen: home_screen},
+  Profile: {screen: ProfileScreen},
 });
+
+const App = createAppContainer(MainNavigator);
+
+
+export default App;
+
+
+
