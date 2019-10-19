@@ -6,6 +6,9 @@ import React from 'react';
 
 interface Props {
     navigation: any
+    // Pass data between pages using this interface
+    // ex: 1 = individual's name, 2 = individual's profile number
+    data: Map<Number, any>
   }
 
 class HomeScreen extends React.Component<Props> {
