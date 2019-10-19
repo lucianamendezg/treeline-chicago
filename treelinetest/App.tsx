@@ -14,7 +14,7 @@ import {ProfileScreen} from './pages/ProfileScreen';
 const MainNavigator = createStackNavigator({
   Home: {screen: home_screen},
   Profile: {screen: ProfileScreen},
-  API: {screen: ApiScreen}
+  Api: {screen: ApiScreen}
 });
 
 const App = createAppContainer(MainNavigator);
