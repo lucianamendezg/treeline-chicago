@@ -6,6 +6,7 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
       <Text>This is a test</Text>
+      <Text>EPIC GAMING MOMENT</Text>
     </View>
   );
 }
