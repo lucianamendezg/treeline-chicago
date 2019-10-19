@@ -23,6 +23,10 @@ class HomeScreen extends React.Component<Props> {
             title="Go to Jane's profile"
             onPress={() => navigate('Profile', {name: 'Jane'})}
             />
+            <Button
+            title="API Tester"
+            onPress={() => navigate('ApiScreen')}
+            />
         </View>
       );
     }
