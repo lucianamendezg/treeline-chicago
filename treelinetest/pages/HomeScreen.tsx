@@ -27,6 +27,10 @@ class HomeScreen extends React.Component<Props> {
             title="API Tester"
             onPress={() => navigate('Api')}
             />
+            <Button
+            title="Geolocation"
+            onPress={() => navigate('Geo')}
+            />
         </View>
       );
     }
