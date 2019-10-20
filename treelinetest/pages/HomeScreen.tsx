@@ -38,8 +38,11 @@ class HomeScreen extends React.PureComponent {
             }}>My Score</MenuItem>
           <MenuItem onPress={() =>{
             this.hideMenu;
-            navigate('Map');
+            navigate('Map')
             }}>Map</MenuItem>
+          <MenuItem onPress={() =>{
+            navigate('Api');
+            }}>Api</MenuItem>
         </Menu>
       </View>
     );
