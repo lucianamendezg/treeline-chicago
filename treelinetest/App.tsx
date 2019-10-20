@@ -7,15 +7,21 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {LoginScreen} from './pages/LoginScreen';
 import {home_screen } from './pages/HomeScreen';
+import { LoginScreen } from './pages/LoginScreen';
 import {ApiScreen} from './pages/ApiScreen';
 import {ProfileScreen} from './pages/ProfileScreen';
+import {Geolocation} from './pages/Geolocation';
+import {MapScreen} from './pages/MapScreen';
 
 
 const MainNavigator = createStackNavigator({
   Login: {screen: LoginScreen},
   Home: {screen: home_screen},
   Profile: {screen: ProfileScreen},
-  Api: {screen: ApiScreen}
+  Api: {screen: ApiScreen},
+  Geo: {screen: Geolocation}
+  Firebase: {screen: AddItem},
+  Map: {screen: MapScreen}
 });
 
 const App = createAppContainer(MainNavigator);
