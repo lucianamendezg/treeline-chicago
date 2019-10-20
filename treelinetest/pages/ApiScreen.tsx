@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity, RefreshControl } from 'react-native';
+import stops from './stops.json';
 
 export class ApiScreen extends React.Component{
 
@@ -11,12 +12,12 @@ export class ApiScreen extends React.Component{
     }
   }
   componentDidMount(){
-    return fetch('https://facebook.github.io/react-native/movies.json')
+    return fetch('http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=e66c07d2df874365bf4c7c73efda651b&mapid=41450&outputType=JSON')
     .then((response)=>response.json())
     .then((responseJson)=> {
       this.setState({
         isLoading: false,
-        dataSource: responseJson.movies,
+        dataSource: responseJson.ctatt.eta,
         })
       })
     .catch((error)=>{
@@ -36,10 +37,11 @@ export class ApiScreen extends React.Component{
     }
     renderItem=(data)=>
     <TouchableOpacity style={styles.list}>
-    <Text>{data.item.title}</Text></TouchableOpacity>
+    <Text>{data.item.rn}</Text></TouchableOpacity>
 
 
   render(){
+
     if (this.state.isLoading){
       return(
         <View style={styles.loader}>
@@ -53,10 +55,11 @@ export class ApiScreen extends React.Component{
          data= {this.state.dataSource}
          ItemSeparatorComponent = {this.FlatListItemSeparator}
          renderItem= {item=> this.renderItem(item)}
-         keyExtractor= {item=>item.id.toString()}
+         keyExtractor= {item=>item.rn.toString()}
       />
      </View>
       );
+
     }
 }
 
