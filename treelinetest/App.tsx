@@ -20,9 +20,8 @@ const MainNavigator = createStackNavigator({
   Login: {screen: LoginScreen}, 
   Home: {screen: home_screen},
   Profile: {screen: ProfileScreen},
-  Geo: {screen: Geolocation}
+  Geo: {screen: Geolocation},
   API: {screen: ApiScreen},
-  Firebase: {screen: AddItem},
   Map: {screen: MapScreen}
 });
 

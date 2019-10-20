@@ -22,27 +22,26 @@ class HomeScreen extends React.Component {
     };
     render() {
       return (
-        <Button
-        onPress={() => this.props.navigation.navigate('Notifications')}
-        title="Go to notifications"
-        />
-
         <View style={styles.HomeScreen}>
             <Button
+            onPress={() => this.props.navigation.navigate('Notifications')}
+            title="Go to notifications"
+            />
+            <Button
             title="Go to Jane's profile??"
-            onPress={() => navigate('Profile', {name: 'Jane'})}
+            onPress={() => this.props.navigation.navigate('Profile', {name: 'Jane'})}
             />
             <Button
             title="API Tester"
-            onPress={() => navigate('Api')}
+            onPress={() => this.props.navigation.navigate('Api')}
             />
             <Button
             title="Geolocation"
-            onPress={() => navigate('Geo')}
+            onPress={() => this.props.navigation.navigate('Geo')}
             />
             <Button
               title="Test Firebase"
-              onPress={()=>navigate('Firebase')}
+              onPress={()=>this.props.navigation.navigate('Firebase')}
             />
         </View>
       );
