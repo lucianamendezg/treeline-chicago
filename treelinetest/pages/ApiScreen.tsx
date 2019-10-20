@@ -6,6 +6,25 @@ import * as Permissions from 'expo-permissions';
 import Stations from './stops.json';
 import { number, string } from 'prop-types';
 
+let randomHex = () => {
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++ ) {
+      color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+export const Colors = {
+  G: 'green',
+  Blue: 'blue',
+  Red: 'red',
+  Org: 'orange',
+  Pink: 'pink',
+  Brn: 'brown',
+  P: 'purple'
+};
+
 export class ApiScreen extends React.Component{
 
   constructor(props){
@@ -106,6 +125,34 @@ export class ApiScreen extends React.Component{
     this.setState({ location });
   };
 
+  getcolorb = (line) => {
+    if(line == "G"){
+      return "#00ff00";
+    }
+    if(line == "Brn"){
+      return "#654321";
+    }
+    if(line == "Org"){
+      return "#ffa500";
+    }
+    if(line == "Pink"){
+      return "#ff69b4";
+    }
+    if(line == "Red"){
+      return "#ff0000";
+    }
+    if(line == "Blue"){
+      return "#0d98ba";
+    }
+    if(line == "P"){
+      return "#800080";
+    }
+    else{
+      return "#fff";
+    }
+
+  }
+
   FlatListItemSeparator = () => {
     return (
       <View style={{
@@ -117,7 +164,7 @@ export class ApiScreen extends React.Component{
     );
     }
     renderItem=(data)=>
-    <TouchableOpacity style={styles.list}>
+    <TouchableOpacity style={{backgroundColor:Colors.data.item.rt}}>
     <Text>{data.item.staNm}</Text>
     <Text>{data.item.rt}</Text>
     <Text>{data.item.destNm}</Text>
@@ -161,6 +208,6 @@ export class ApiScreen extends React.Component{
       list:{
         paddingVertical: 4,
         margin: 5,
-        backgroundColor: "#fff"
+        backgroundColor: randomHex()
       }
     });
