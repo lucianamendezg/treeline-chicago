@@ -3,27 +3,60 @@ import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity, 
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
-import stops from './stops.json';
+import Stations from './stops.json';
+import { number, string } from 'prop-types';
 
 export class ApiScreen extends React.Component{
 
   constructor(props){
     super(props);
     this.state = {
+      stations : Stations,
       isLoading: true,
       location: null,
-      dataSource: []
+      minStation: 10000,
+      dataSource: [],
+      url: ''
     }
+
+   
   }
   componentDidMount(){
-    if (Platform.OS === 'android' && !Constants.isDevice) {
-      this.setState({
-        errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
-      });
-    } else {
-      this._getLocationAsync();
+    /*
+    var min = 10000;
+    var minStation;
+    var yourcoords = JSON.stringify("(" + this.state.location.coords.longitude + ", " + this.state.location.coords.latitude + ")");
+    for(var key in stops){
+      var dist = this.distance(yourcoords, key.Location);
+      if( dist < min ){
+        min = dist;
+        minStation = key.StopId;
+      }
     }
-    return fetch('http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=e66c07d2df874365bf4c7c73efda651b&mapid=40380&outputType=JSON')
+    */
+   if (Platform.OS === 'android' && !Constants.isDevice) {
+    this.setState({
+      errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+    });
+  } else {
+    this._getLocationAsync().then(() => {
+      var min = 10000;
+      var yourcoords = (this.state.location.coords.latitude + ", " + this.state.location.coords.longitude );
+      //this.state.minStation = yourcoords;
+      this.setState({
+        minStation: this.state.stations[0].StopId
+      });
+      for(var index in this.state.stations){
+          var curr = this.distance(yourcoords,this.state.stations[index].Location);
+          if(curr <= min){
+            min = curr;
+            this.setState({
+              minStation: this.state.stations[index].StopId
+            });
+          }
+      }
+      var urlvar= 'http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=e66c07d2df874365bf4c7c73efda651b&mapid=' + this.state.minStation.toString() + '&outputType=JSON'
+      return fetch(urlvar)
     .then((response)=>response.json())
     .then((responseJson)=> {
       this.setState({
@@ -34,6 +67,12 @@ export class ApiScreen extends React.Component{
     .catch((error)=>{
       console.log(error)
     });
+    }).catch((error)=>{
+      console.log(error)
+
+    });
+  }
+    
   }
 
   distance(latlong1, latlong2){
@@ -95,7 +134,7 @@ export class ApiScreen extends React.Component{
     }
     renderItem=(data)=>
     <TouchableOpacity style={styles.list}>
-    <Text>{data.item.rn}</Text></TouchableOpacity>
+    <Text>{data.item.staNm}</Text></TouchableOpacity>
 
 
   render(){
@@ -113,8 +152,10 @@ export class ApiScreen extends React.Component{
          data= {this.state.dataSource}
          ItemSeparatorComponent = {this.FlatListItemSeparator}
          renderItem= {item=> this.renderItem(item)}
-         keyExtractor= {item=>item.rn.toString()}
+         keyExtractor= {item=>item.staNm.toString()}
       />
+      <Text>bhsdbgjsdhgbj {this.state.minStation}</Text>
+      <Text>bhsdbgjsdhgbj {this.state.url}</Text>
      </View>
       );
 
