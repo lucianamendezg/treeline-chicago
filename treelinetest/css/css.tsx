@@ -33,8 +33,17 @@ const styles = StyleSheet.create({
     },
     button:{
       backgroundColor: '#6B8E23',
-      paddingVertical: 15
+      paddingVertical: 15,
+      
     },
+    buttonclick:{
+      flexDirection: 'row',
+      justifyContent: 'center',
+      backgroundColor: '#6B8E23',
+      paddingVertical: 5,
+      paddingHorizontal: 30
+    },
+      
     buttonText:{
       color: '#FFF',
       textAlign: 'center',
@@ -48,8 +57,8 @@ const styles = StyleSheet.create({
     },
 
     logo:{
-      width:100,
-      height:100
+      width:200,
+      height:200
     },
     slogan:{
       color: '#FFF',
@@ -82,6 +91,33 @@ const styles = StyleSheet.create({
       },
       menuText:{
         
+      },
+      home:{
+        backgroundColor: '#98FB98',
+        height: '100%',
+        alignSelf: 'center',
+        alignItems:'center',
+        flexGrow: 1,
+
+      },
+      menu:{
+        backgroundColor: '#98FB98',
+        height: '100%',
+        fontSize: 100
+
+      },
+      homeTree:{
+        width:370,
+        height:370,
+        alignItems:'center',
+        flexGrow: 1,
+        justifyContent: 'center'
+      },
+      menucon:{ 
+        fontSize:40,
+        alignSelf: 'flex-start',
+        justifyContent: 'center',
+        position: 'absolute'
       }
 });
 
