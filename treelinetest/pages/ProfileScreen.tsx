@@ -25,7 +25,7 @@ class ProfileScreen extends React.Component<Props> {
       return (
         <View style={styles.ProfileScreen}>
             <Image
-                    style={styles.coins}
+                    style={styles.me}
                     source={require('../pages/images/user.png')}
                 /> 
             <Text style={{fontSize: 30, textAlign:"center"}}>This is {ScoreScreen.user_name}'s profile!</Text>

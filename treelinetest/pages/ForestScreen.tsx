@@ -14,7 +14,7 @@ export class ForestScreen extends Component {
       <View>
 <Image
 style={{width:400,height:400}}
-source={require('./images/tree.png')}
+source={require('./images/forest.png')}
 />
     <Text style={{fontSize:20}}>
       Green Points= {ScoreScreen.current_score}

@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
       height:350
     },
     me:{
-      width:200,
-      height:200
+      width:350,
+      height:350
     },
     logo:{
       paddingLeft: 20,
