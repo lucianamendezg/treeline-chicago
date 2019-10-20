@@ -4,6 +4,7 @@ import {Props} from './HomeScreen'
 import {styles} from '../css/css'
 import { any, number } from "prop-types";
 import ReactDOM from 'react-dom';
+import {ScoreScreen} from './ScoreScreen'
 
 class ProfileScreen extends React.Component<Props> {
     static navigationOptions;
@@ -27,7 +28,7 @@ class ProfileScreen extends React.Component<Props> {
                     style={styles.coins}
                     source={require('../pages/images/user.png')}
                 /> 
-            <Text style={{fontSize: 30, textAlign:"center"}}>This is {this.state.name.substring(1, this.state.name.length - 1)}'s profile!</Text>
+            <Text style={{fontSize: 30, textAlign:"center"}}>This is {ScoreScreen.user_name}'s profile!</Text>
         </View>
       );
     }
