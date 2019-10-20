@@ -37,23 +37,39 @@ export class ApiScreen extends React.Component{
   }
 
   distance(latlong1, latlong2){
-    latlong1 = latlong1.replace("(", "");
-    latlong1 = latlong1.replace(")", "");
-    latlong1 = latlong1.replace(" ", "");
-    latlong1 = latlong1.split(",");
-    lat1 = latlong1[0];
-    long1 = latlong1[1];
-    latlong2 = latlong2.replace("(", "");
-    latlong2 = latlong2.replace(")", "");
-    latlong2 = latlong2.replace(" ", "");
-    latlong2 = latlong2.split(",");
-    lat2 = latlong2[0];
-    long2 = latlong2[1];
-    var a = lat1 - lat2;
-    var b = long1 - long2;
-    var c = Math.sqrt( a*a + b*b );
-    return (c);
-  }
+      //cleaning the data
+      latlong1 = latlong1.replace("(", "");
+      latlong1 = latlong1.replace(")", "");
+      latlong1 = latlong1.replace(" ", "");
+      latlong1 = latlong1.split(",");
+
+      lat1 = Number(latlong1[0]);
+      long1 = Number(latlong1[1]);
+
+      //cleaning the data
+      latlong2 = latlong2.replace("(", "");
+      latlong2 = latlong2.replace(")", "");
+      latlong2 = latlong2.replace(" ", "");
+      latlong2 = latlong2.split(",");
+
+      lat2 = latlong2[0];
+      long2 = latlong2[1];
+
+      //Calculating the geodesic distance in type s c r i p t
+      radius=6371;
+
+      //Calculations
+      degree_lat=(lat2-lat1)(Math.PI/180);
+      degree_lon=(long2-long1)(Math.PI/180);
+      lat_1=lat1Math.PI/180;
+      lat_2=lat2Math.PI/180;
+
+      //Calculations ++
+      a= Math.sin(degree_lat/2) * Math.sin(degree_lat/2) + Math.sin(degree_lon/2) * Math.sin(degree_lon/2) * Math.cos(lat_1) * Math.cos(lat_2);
+      b=2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      c=radius * b;
+      return c;
+    }
 
   _getLocationAsync = async () => {
     let { status } = await Permissions.askAsync(Permissions.LOCATION);
