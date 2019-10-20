@@ -13,6 +13,11 @@ import okhttp3.OkHttpClient;
 
 // Needed for `react-native link`
 // import com.facebook.react.ReactApplication;
+import com.mapbox.reactnativemapboxgl.ReactNativeMapboxGLPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import com.mapbox.rctmgl.RCTMGLPackage;
+import com.mapbox.rctmgl.RCTMGLPackage;
 
 public class MainApplication extends ExpoApplication implements AppLoaderPackagesProviderInterface<ReactPackage> {
 
@@ -28,7 +33,12 @@ public class MainApplication extends ExpoApplication implements AppLoaderPackage
         // TODO: add native modules!
 
         // Needed for `react-native link`
-        // new MainReactPackage()
+        // new MainReactPackage(),
+            new ReactNativeMapboxGLPackage(),
+            new RNGestureHandlerPackage(),
+            new RNFirebasePackage(),
+            new RCTMGLPackage(),
+            new RCTMGLPackage()
     );
   }
 

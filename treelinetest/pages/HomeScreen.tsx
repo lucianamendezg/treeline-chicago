@@ -13,7 +13,7 @@ interface Props {
 
 class HomeScreen extends React.Component<Props> {
     static navigationOptions = {
-      
+      headerLeft: null
     };
     render() {
       const {navigate} = this.props.navigation;

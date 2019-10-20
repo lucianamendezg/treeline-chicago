@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
+      fontFamily: 'Open Sans',
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
@@ -64,6 +65,18 @@ const styles = StyleSheet.create({
       footerContainer: {
         padding: 20,
         backgroundColor: 'lightgrey'
+      },
+      sideMenuContainer:{
+
+      },
+      sideMenuProfileIcon:{
+
+      },
+      sideMenuIcon:{
+
+      },
+      menuText:{
+        
       }
 });
 
