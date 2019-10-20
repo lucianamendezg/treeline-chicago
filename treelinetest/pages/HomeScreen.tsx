@@ -40,14 +40,16 @@ class HomeScreen extends React.PureComponent {
 
           <MenuItem onPress={() =>{
             this.hideMenu;
-            navigate('Map');
+            navigate('Map')
             }}>Map</MenuItem>
-
           <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('QR');
             }}>QR Code
           </MenuItem>
+          <MenuItem onPress={() =>{
+            navigate('Api');
+            }}>Api</MenuItem>
         </Menu>
       </View>
     );
