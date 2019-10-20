@@ -25,10 +25,25 @@ class HomeScreen extends React.Component {
         <Button
         onPress={() => this.props.navigation.navigate('Notifications')}
         title="Go to notifications"
-      />
+        />
+
+        <View style={styles.HomeScreen}>
+            <Button
+            title="Go to Jane's profile??"
+            onPress={() => navigate('Profile', {name: 'Jane'})}
+            />
+            <Button
+            title="API Tester"
+            onPress={() => navigate('ApiScreen')}
+            />
+            <Button
+              title="Test Firebase"
+              onPress={()=>navigate('Firebase')}
+            />
+        </View>
       );
     }
-  }
+}
 
 const home_screen = withNavigation(HomeScreen);
 
