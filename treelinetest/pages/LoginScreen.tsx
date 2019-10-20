@@ -30,7 +30,10 @@ export default class LoginScreen extends React.Component {
                 secureTextEntry
                 style={styles.input}
             />
-            <TouchableOpacity onPress={() => navigate('Home')} style={styles.button}>
+            <TouchableOpacity onPress={() => {
+                navigate('Home')}
+                
+                } style={styles.button}>
                 <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
         </KeyboardAvoidingView>

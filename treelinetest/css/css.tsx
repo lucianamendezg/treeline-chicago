@@ -19,6 +19,11 @@ const styles = StyleSheet.create({
       padding: 20,
       height: '100%'
     },
+    ScoreScreen:{
+      backgroundColor: '#98FB98',
+      padding: 20,
+      height: '100%'
+    },
     input:{
       backgroundColor: '#3CB371',
       height: 40,

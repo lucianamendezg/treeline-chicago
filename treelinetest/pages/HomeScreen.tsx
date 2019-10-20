@@ -24,7 +24,7 @@ class HomeScreen extends React.Component<Props> {
             title="Go to notifications"
             />
             <Button
-            title="Go to Jane's profile??"
+            title="Go to Jane's profile"
             onPress={() => this.props.navigation.navigate('Profile', {name: 'Jane'})}
             />
             <Button
@@ -34,6 +34,14 @@ class HomeScreen extends React.Component<Props> {
             <Button
             title="Geolocation"
             onPress={() => this.props.navigation.navigate('Geo')}
+            />
+            <Button
+            title="Current Score round"
+            onPress={() => this.props.navigation.navigate('Score')}
+            />
+            <Button
+            title="UpdateScore"
+            onPress={() => this.props.navigation.navigate('Update')}
             />
         </View>
       );
