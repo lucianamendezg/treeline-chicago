@@ -1,5 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity, RefreshControl } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity, RefreshControl, Platform } from 'react-native';
+import Constants from 'expo-constants';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 import stops from './stops.json';
 
 export class ApiScreen extends React.Component{
@@ -8,10 +11,18 @@ export class ApiScreen extends React.Component{
     super(props);
     this.state = {
       isLoading: true,
+      location: null,
       dataSource: []
     }
   }
   componentDidMount(){
+    if (Platform.OS === 'android' && !Constants.isDevice) {
+      this.setState({
+        errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+      });
+    } else {
+      this._getLocationAsync();
+    }
     return fetch('http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=e66c07d2df874365bf4c7c73efda651b&mapid=40380&outputType=JSON')
     .then((response)=>response.json())
     .then((responseJson)=> {
@@ -25,6 +36,19 @@ export class ApiScreen extends React.Component{
     });
 
   }
+
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status !== 'granted') {
+      this.setState({
+        errorMessage: 'Permission to access location was denied',
+      });
+    }
+    
+    let location = await Location.getCurrentPositionAsync({});
+    this.setState({ location });
+  };
+
   FlatListItemSeparator = () => {
     return (
       <View style={{
