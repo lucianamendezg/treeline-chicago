@@ -13,6 +13,7 @@ import {Geolocation} from './pages/Geolocation';
 import {MapScreen} from './pages/MapScreen';
 import { ScoreScreen } from './pages/ScoreScreen';
 import { UpdateScore } from './pages/UpdateScore';
+import {ForestScreen} from './pages/ForestScreen'
 
 
 const MainNavigator = createStackNavigator({
@@ -23,7 +24,8 @@ const MainNavigator = createStackNavigator({
   Geo: {screen: Geolocation},
   Map: {screen: MapScreen},
   Score: {screen: ScoreScreen},
-  Update: {screen: UpdateScore} 
+  Update: {screen: UpdateScore},
+  Forest: {screen: ForestScreen}
 });
 
 const App = createAppContainer(MainNavigator);

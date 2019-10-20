@@ -11,7 +11,7 @@ export class QRScreen extends Component{
         <View>
             <Image
                 source={require('../pages/images/qrcode.png')}
-                /> 
+                />
         </View>
         );
     }

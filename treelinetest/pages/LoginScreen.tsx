@@ -11,7 +11,7 @@ export default class LoginScreen extends React.Component {
                 <Image
                     style={styles.logo}
                     source={require('../pages/images/download.png')}
-                /> 
+                />
                 <Text style={styles.slogan}>An app to go Green</Text>
             </View>
             <TextInput
@@ -32,7 +32,7 @@ export default class LoginScreen extends React.Component {
             />
             <TouchableOpacity onPress={() => {
                 navigate('Home')}
-                
+
                 } style={styles.button}>
                 <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
