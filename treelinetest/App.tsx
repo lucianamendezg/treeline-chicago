@@ -8,13 +8,15 @@ import {createStackNavigator} from 'react-navigation-stack';
 import { home_screen } from './pages/HomeScreen';
 import {ApiScreen} from './pages/ApiScreen';
 import {ProfileScreen} from './pages/ProfileScreen';
+import {AddItem} from './pages/FireBaseTest';
 
 
 
 const MainNavigator = createStackNavigator({
   Home: {screen: home_screen},
   Profile: {screen: ProfileScreen},
-  API: {screen: ApiScreen}
+  API: {screen: ApiScreen},
+  Firebase: {screen: AddItem}
 });
 
 const App = createAppContainer(MainNavigator);
