@@ -9,15 +9,13 @@ import {LoginScreen} from './pages/LoginScreen';
 import {home_screen } from './pages/HomeScreen';
 import {ApiScreen} from './pages/ApiScreen';
 import {ProfileScreen} from './pages/ProfileScreen';
-import {Geolocation} from './pages/Geolocation';
 
 
 const MainNavigator = createStackNavigator({
   Login: {screen: LoginScreen},
   Home: {screen: home_screen},
   Profile: {screen: ProfileScreen},
-  Api: {screen: ApiScreen},
-  Geo: {screen: Geolocation}
+  Api: {screen: ApiScreen}
 });
 
 const App = createAppContainer(MainNavigator);
