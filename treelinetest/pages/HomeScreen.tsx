@@ -1,4 +1,4 @@
-import {Button, Text, View } from "react-native";
+import {Button, Text, View, Image,StyleSheet  } from "react-native";
 
 import { withNavigation } from "react-navigation";
 import {styles} from '../css/css'
@@ -13,16 +13,19 @@ interface Props {
 
 class HomeScreen extends React.Component<Props> {
     static navigationOptions = {
-      title: 'Welcome',
+      drawerLabel: 'Home',
+      drawerIcon: ({tintColor}) => (
+        <Image
+        source={require('../pages/images/menu.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+        />
+        ),
     };
     render() {
       const {navigate} = this.props.navigation;
       return (
         <View style={styles.HomeScreen}>
-            <Button
-            title="Go to Jane's profile"
-            onPress={() => navigate('Profile', {name: 'Jane'})}
-            />
+          
         </View>
       );
     }

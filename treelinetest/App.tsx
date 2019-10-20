@@ -7,10 +7,12 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import { home_screen } from './pages/HomeScreen';
 import {ProfileScreen} from './pages/ProfileScreen'
+import { LoginScreen } from './pages/LoginScreen';
 
 
 
 const MainNavigator = createStackNavigator({
+  Login: {screen: LoginScreen}, 
   Home: {screen: home_screen},
   Profile: {screen: ProfileScreen},
 });
