@@ -37,7 +37,7 @@ export class Geolocation extends Component {
     if (this.state.errorMessage) {
       text = this.state.errorMessage;
     } else if (this.state.location) {
-      text = JSON.stringify(this.state.location);
+      text = JSON.stringify("( " + this.state.location.coords.longitude + ", " + this.state.location.coords.latitude + " )");
     }
 
     return (
