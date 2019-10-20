@@ -1,4 +1,4 @@
-import {Button, Text, View, Image,StyleSheet  } from "react-native";
+import {Button, Text, View } from "react-native";
 
 import { withNavigation } from "react-navigation";
 import {styles} from '../css/css'
@@ -11,16 +11,12 @@ interface Props {
     data: Map<Number, any>
   }
 
-class HomeScreen extends React.Component {
+class HomeScreen extends React.Component<Props> {
     static navigationOptions = {
-      drawerLabel: 'Home',
-      drawerIcon: ({tintColor}) => (
-        <Image
-        source={require('../pages/images/menu.png')}
-        />
-        ),
+      
     };
     render() {
+      const {navigate} = this.props.navigation;
       return (
         <View style={styles.HomeScreen}>
             <Button
@@ -40,13 +36,13 @@ class HomeScreen extends React.Component {
             onPress={() => this.props.navigation.navigate('Geo')}
             />
             <Button
-              title="Test Firebase"
-              onPress={()=>this.props.navigation.navigate('Firebase')}
+            title="Geolocation"
+            onPress={() => navigate('Geo')}
             />
         </View>
       );
     }
-}
+  }
 
 const home_screen = withNavigation(HomeScreen);
 
