@@ -35,7 +35,6 @@ class HomeScreen extends React.Component<Props> {
             title="Geolocation"
             onPress={() => this.props.navigation.navigate('Geo')}
             />
-            />
         </View>
       );
     }

@@ -9,18 +9,18 @@ export default class LoginScreen extends React.Component {
         <KeyboardAvoidingView behavior="padding" style={styles.LoginScreen}>
             <View style ={styles.logocon}>
                 <Image
-                    style = {styles.logo}
-                    source= {require('../pages/images/download.png')}
+                    style={styles.logo}
+                    source={require('../pages/images/download.png')}
                 /> 
-                <Text style ={styles.slogan}>An app to go Green</Text>
+                <Text style={styles.slogan}>An app to go Green</Text>
             </View>
             <TextInput
-                placeholder = "email"
+                placeholder="email"
                 placeholderTextColor= '#FFF'
                 returnKeyType="next"
-                keyboardType = 'email-address'
-                autoCapitalize= "none"
-                autoCorrect= {false}
+                keyboardType='email-address'
+                autoCapitalize="none"
+                autoCorrect={false}
                 style={styles.input}
             />
             <TextInput
