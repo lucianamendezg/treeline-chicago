@@ -63,6 +63,9 @@ class HomeScreen extends React.PureComponent {
           <MenuItem onPress={() =>{
             navigate('Api');
             }}>Api</MenuItem>
+            <MenuItem onPress={() =>{
+            navigate('Goals');
+            }}>Reedem Points</MenuItem>
         </Menu>
         <View style={styles.home}>
         <Image
