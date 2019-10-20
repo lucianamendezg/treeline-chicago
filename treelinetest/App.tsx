@@ -13,7 +13,7 @@ import {Geolocation} from './pages/Geolocation';
 import {MapScreen} from './pages/MapScreen';
 import { ScoreScreen } from './pages/ScoreScreen';
 import { UpdateScore } from './pages/UpdateScore';
-import {ForestScreen} from './pages/ForestScreen'
+import {ForestScreen} from './pages/ForestScreen';
 import {QRScreen} from './pages/QRScreen';
 import { GoalsScreen } from './pages/GoalsScreen';
 
@@ -27,7 +27,7 @@ const MainNavigator = createStackNavigator({
   Map: {screen: MapScreen},
   Score: {screen: ScoreScreen},
   Update: {screen: UpdateScore},
-  Forest: {screen: ForestScreen}
+  Forest: {screen: ForestScreen},
   QR: {screen: QRScreen},
   Goals: {screen: GoalsScreen}
 });
