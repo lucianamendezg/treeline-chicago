@@ -63,7 +63,7 @@ class HomeScreen extends React.PureComponent {
             navigate('Api');
             }}>Api</MenuItem>
             <MenuItem onPress={() =>{
-            navigate('Api');
+            navigate('Goals');
             }}>Reedem Points</MenuItem>
         </Menu>
         <View style={styles.home}>
