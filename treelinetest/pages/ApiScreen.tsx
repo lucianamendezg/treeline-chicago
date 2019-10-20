@@ -23,8 +23,27 @@ export class ApiScreen extends React.Component{
     .catch((error)=>{
       console.log(error)
     });
-
   }
+
+  distance(latlong1, latlong2){
+    latlong1 = latlong1.replace("(", "");
+    latlong1 = latlong1.replace(")", "");
+    latlong1 = latlong1.replace(" ", "");
+    latlong1 = latlong1.split(",");
+    lat1 = latlong1[0];
+    long1 = latlong1[1];
+    latlong2 = latlong2.replace("(", "");
+    latlong2 = latlong2.replace(")", "");
+    latlong2 = latlong2.replace(" ", "");
+    latlong2 = latlong2.split(",");
+    lat2 = latlong2[0];
+    long2 = latlong2[1];
+    var a = lat1 - lat2;
+    var b = long1 - long2;
+    var c = Math.sqrt( a*a + b*b );
+    return (c);
+  }
+
   FlatListItemSeparator = () => {
     return (
       <View style={{
