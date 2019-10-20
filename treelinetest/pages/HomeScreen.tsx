@@ -34,7 +34,11 @@ class HomeScreen extends React.Component {
             />
             <Button
             title="API Tester"
-            onPress={() => navigate('ApiScreen')}
+            onPress={() => navigate('Api')}
+            />
+            <Button
+            title="Geolocation"
+            onPress={() => navigate('Geo')}
             />
             <Button
               title="Test Firebase"
