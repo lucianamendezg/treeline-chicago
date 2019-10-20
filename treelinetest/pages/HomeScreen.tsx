@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import { View, Text, TouchableHighlight, Image, StyleSheet,TextInput, Button,TouchableOpacity } from 'react-native';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 import {styles} from '../css/css'
@@ -55,6 +56,10 @@ class HomeScreen extends React.PureComponent {
             this.hideMenu;
             navigate('Map')
             }}>Map</MenuItem>
+            <MenuItem onPress={() =>{
+              this.hideMenu;
+              navigate('Forest');
+            }}>Score</MenuItem>
           <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('QR')

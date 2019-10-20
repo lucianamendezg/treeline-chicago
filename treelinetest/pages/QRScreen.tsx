@@ -22,6 +22,8 @@ export class QRScreen extends Component{
                 backgroundColor: "#008000",
             }}
                 source={require('../pages/images/qrcode.png')}
+
+           
                 /> 
             <Text style={{
                 fontWeight: 'bold',

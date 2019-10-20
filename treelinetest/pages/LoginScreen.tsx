@@ -10,6 +10,7 @@ export default class LoginScreen extends React.Component {
             <View style ={styles.logocon}>
                 <Image
                     style={styles.logo}
+                />
                     source={require('../pages/images/tree.png')}
                 /> 
                 <Text style={styles.slogan}>An app to go Green</Text>
@@ -32,7 +33,7 @@ export default class LoginScreen extends React.Component {
             />
             <TouchableOpacity onPress={() => {
                 navigate('Home')}
-                
+
                 } style={styles.button}>
                 <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>

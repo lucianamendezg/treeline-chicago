@@ -6,7 +6,7 @@ import { number } from "prop-types";
 
 export class ScoreScreen extends Component{
 
-    static current_score = 0;
+    static current_score = 5;
 
 
     static increaseScore(increase){
