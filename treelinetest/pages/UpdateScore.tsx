@@ -10,7 +10,7 @@ export class UpdateScore extends Component{
             <View>
                 <Button
                 title="IncreaseScore"
-                onPress={() => ScoreScreen.updateScore("john", 5)}
+                onPress={() => ScoreScreen.increaseScore(5)}
                 />
                 <Button
                 title="Decrease Score"

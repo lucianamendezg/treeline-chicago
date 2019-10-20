@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity, RefreshControl, Platform } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, FlatList, Button, TouchableOpacity, RefreshControl, Platform } from 'react-native';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import Stations from './stops.json';
 import { number, string } from 'prop-types';
+import { UpdateScore } from './UpdateScore';
+import {ScoreScreen} from './ScoreScreen';
 
 export class ApiScreen extends React.Component{
 
@@ -19,7 +21,7 @@ export class ApiScreen extends React.Component{
       url: ''
     }
 
-   
+
   }
   componentDidMount(){
     /*
@@ -72,7 +74,7 @@ export class ApiScreen extends React.Component{
 
     });
   }
-    
+
   }
 
   distance(latlong1, latlong2){
@@ -118,10 +120,12 @@ export class ApiScreen extends React.Component{
     }
     renderItem=(data)=>
     <TouchableOpacity style={styles.list}>
-    <Text>{data.item.staNm}</Text>
+    <Button title={data.item.staNm} onPress={() => ScoreScreen.increaseScore(5)}/>
     <Text>{data.item.rt}</Text>
     <Text>{data.item.destNm}</Text>
-    <Text>{data.item.arrT.split('T')[1]}</Text></TouchableOpacity>
+    <Text>{data.item.arrT.split('T')[1]}</Text>
+    </TouchableOpacity>
+
 
 
   render(){
@@ -161,6 +165,7 @@ export class ApiScreen extends React.Component{
       list:{
         paddingVertical: 4,
         margin: 5,
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        alignItems: "center"
       }
     });

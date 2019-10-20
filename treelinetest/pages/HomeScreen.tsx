@@ -1,10 +1,10 @@
 import React from 'react';
- 
+
 import { View, Text, TouchableHighlight, Image, StyleSheet,TextInput, Button,TouchableOpacity } from 'react-native';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 import {styles} from '../css/css'
 import { withNavigation } from "react-navigation";
- 
+
 interface Props {
   navigation: any
   // Pass data between pages using this interface
@@ -17,20 +17,21 @@ class HomeScreen extends React.PureComponent {
     headerLeft: null
   };
   _menu = null;
- 
+
   setMenuRef = ref => {
     this._menu = ref;
   };
- 
+
   hideMenu = () => {
     this._menu.hide();
   };
- 
+
   showMenu = () => {
     this._menu.show();
   };
- 
+
   render() {
+    console.disableYellowBox = true;
     const {navigate} = this.props.navigation;
     return (
       <View style={styles.menu}>
@@ -44,7 +45,7 @@ class HomeScreen extends React.PureComponent {
           <MenuItem onPress={() => {
             this.hideMenu;
             navigate('Profile', {name: 'Jane'})}}>My Profile</MenuItem>
-            
+
           <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('Score')
@@ -56,7 +57,7 @@ class HomeScreen extends React.PureComponent {
             }}>Map</MenuItem>
           <MenuItem onPress={() =>{
             this.hideMenu;
-            navigate('QR');
+            navigate('QR')
             }}>QR Code
           </MenuItem>
           <MenuItem onPress={() =>{
@@ -67,24 +68,24 @@ class HomeScreen extends React.PureComponent {
         <Image
           style={styles.homeTree}
           source={require('../pages/images/tree.png')}
-                /> 
+                />
         <View style={styles.buttonclick}>
-        <TouchableOpacity onPress={() => {navigate('Score')} 
+        <TouchableOpacity onPress={() => {navigate('Score')}
                 } style={styles.buttonclick}>
                 <Text style={styles.buttonText}>My Score</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {navigate('API')} 
+        <TouchableOpacity onPress={() => {navigate('Api')}
                 } style={styles.buttonclick}>
-                <Text style={styles.buttonText}>API</Text>
+                <Text style={styles.buttonText}>Trains</Text>
         </TouchableOpacity>
          </View>
         </View>
         </View>
-        
+
 
       </View>
     );
   }
 }
- 
+
 export {HomeScreen};
