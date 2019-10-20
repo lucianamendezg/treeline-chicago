@@ -25,7 +25,7 @@ const MainNavigator = createStackNavigator({
   Map: {screen: MapScreen},
   Score: {screen: ScoreScreen},
   Update: {screen: UpdateScore},
-  QR: {screen: }
+  QR: {screen: QRScreen}
 });
 
 const App = createAppContainer(MainNavigator);

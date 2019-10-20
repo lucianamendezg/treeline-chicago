@@ -8,8 +8,19 @@ export class QRScreen extends Component{
 
     render(){
         return (
-        <View>
-            <Image
+        <View style={{
+            flex: 1,
+            flexDirection: "row",
+            alignItems: "stretch"
+          }}>
+            <Image style={{
+                flex: 1,
+                width: 80,
+                height: 300,
+                resizeMode: 'contain',
+                backgroundColor: "#008000",
+                padding: 2
+            }}
                 source={require('../pages/images/qrcode.png')}
                 /> 
         </View>
