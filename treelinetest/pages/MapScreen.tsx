@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {StyleSheet,View} from "react-native";
+import {StyleSheet,View, Text} from "react-native";
 //import {styles} from "./css/css";
 //This is the token we own in the mapbox api
 
@@ -10,6 +10,8 @@ export class MapScreen extends Component{
 render() {
     return (
       <View style={styles.page}>
+        <Text style={{fontWeight: 'bold', fontSize: 20 }}>
+          UNDER CONSTRUCTION</Text>
         <View style={styles.container}>
         </View>
       </View>

@@ -47,10 +47,10 @@ class HomeScreen extends React.PureComponent {
             this.hideMenu;
             navigate('Profile', {name: 'Jane'})}}>My Profile</MenuItem>
 
-          <MenuItem onPress={() =>{
+          {/* <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('Score')
-            }}>My Score</MenuItem>
+            }}>My Score</MenuItem> */}
 
           <MenuItem onPress={() =>{
             this.hideMenu;
@@ -65,9 +65,11 @@ class HomeScreen extends React.PureComponent {
             navigate('QR')
             }}>QR Code
           </MenuItem>
-          <MenuItem onPress={() =>{
+
+          {/* <MenuItem onPress={() =>{
             navigate('Api');
-            }}>Api</MenuItem>
+            }}>Api</MenuItem> */}
+
             <MenuItem onPress={() =>{
             navigate('Goals');
             }}>Reedem Points</MenuItem>
