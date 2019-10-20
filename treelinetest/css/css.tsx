@@ -12,7 +12,9 @@ const styles = StyleSheet.create({
       backgroundColor: '#0000FF',
     },
     ProfileScreen:{
-      backgroundColor: '#FFFF00'
+      backgroundColor: '#add8e6',
+      height: '100%'
+
     },
     LoginScreen:{
       backgroundColor: '#98FB98',
@@ -55,8 +57,17 @@ const styles = StyleSheet.create({
       flexGrow: 1,
       justifyContent: 'center'
     },
-
+    coins:{
+      width:350,
+      height:350
+    },
+    me:{
+      width:200,
+      height:200
+    },
     logo:{
+      paddingLeft: 20,
+      alignContent: 'center',
       width:200,
       height:200
     },
@@ -119,6 +130,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         position: 'absolute'
       }
+  
 });
 
 export {styles};

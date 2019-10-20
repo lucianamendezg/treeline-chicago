@@ -1,4 +1,4 @@
-import {Button, Text, View } from "react-native";
+import {Button, Text, View, Image } from "react-native";
 import React from 'react';
 import {Props} from './HomeScreen'
 import {styles} from '../css/css'
@@ -23,7 +23,11 @@ class ProfileScreen extends React.Component<Props> {
         const {navigation} = this.props;
       return (
         <View style={styles.ProfileScreen}>
-            <Text>This is {this.state.name} profile!</Text>
+            <Image
+                    style={styles.coins}
+                    source={require('../pages/images/user.png')}
+                /> 
+            <Text style={{fontSize: 30, textAlign:"center"}}>This is {this.state.name}'s profile!</Text>
         </View>
       );
     }
