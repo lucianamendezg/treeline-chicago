@@ -118,7 +118,10 @@ export class ApiScreen extends React.Component{
     }
     renderItem=(data)=>
     <TouchableOpacity style={styles.list}>
-    <Text>{data.item.staNm}</Text></TouchableOpacity>
+    <Text>{data.item.staNm}</Text>
+    <Text>{data.item.rt}</Text>
+    <Text>{data.item.destNm}</Text>
+    <Text>{data.item.arrT.split('T')[1]}</Text></TouchableOpacity>
 
 
   render(){
@@ -136,10 +139,8 @@ export class ApiScreen extends React.Component{
          data= {this.state.dataSource}
          ItemSeparatorComponent = {this.FlatListItemSeparator}
          renderItem= {item=> this.renderItem(item)}
-         keyExtractor= {item=>item.staNm.toString()}
+         keyExtractor= {item=>item.rn.toString()}
       />
-      <Text>bhsdbgjsdhgbj {this.state.minStation}</Text>
-      <Text>bhsdbgjsdhgbj {this.state.url}</Text>
      </View>
       );
 
