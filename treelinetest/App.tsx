@@ -6,7 +6,7 @@ import { styles } from "./css/css";
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import {LoginScreen} from './pages/LoginScreen';
-import {home_screen } from './pages/HomeScreen';
+import {HomeScreen } from './pages/HomeScreen';
 import {ApiScreen} from './pages/ApiScreen';
 import {ProfileScreen} from './pages/ProfileScreen';
 import {Geolocation} from './pages/Geolocation';
@@ -17,7 +17,7 @@ import { UpdateScore } from './pages/UpdateScore';
 
 const MainNavigator = createStackNavigator({
   Login: {screen: LoginScreen},
-  Home: {screen: home_screen},
+  Home: {screen: HomeScreen},
   Profile: {screen: ProfileScreen},
   Api: {screen: ApiScreen},
   Geo: {screen: Geolocation},
