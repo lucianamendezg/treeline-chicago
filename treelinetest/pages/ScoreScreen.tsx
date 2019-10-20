@@ -9,6 +9,7 @@ import {styles} from '../css/css'
 export class ScoreScreen extends Component{
 
     static current_score = 5;
+    static user_name = "";
 
 
     static increaseScore(increase){
