@@ -11,22 +11,21 @@ interface Props {
     data: Map<Number, any>
   }
 
-class HomeScreen extends React.Component<Props> {
+class HomeScreen extends React.Component {
     static navigationOptions = {
       drawerLabel: 'Home',
       drawerIcon: ({tintColor}) => (
         <Image
         source={require('../pages/images/menu.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
         />
         ),
     };
     render() {
-      const {navigate} = this.props.navigation;
       return (
-        <View style={styles.HomeScreen}>
-          
-        </View>
+        <Button
+        onPress={() => this.props.navigation.navigate('Notifications')}
+        title="Go to notifications"
+      />
       );
     }
   }

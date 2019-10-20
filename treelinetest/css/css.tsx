@@ -43,14 +43,29 @@ const styles = StyleSheet.create({
 
     logo:{
       width:100,
-      height:120
+      height:100
     },
     slogan:{
       color: '#FFF',
       marginTop: 10,
       width: 160,
       textAlign: 'center'
-    }
+    },
+      navItemStyle: {
+        padding: 10
+      },
+      navSectionStyle: {
+        backgroundColor: 'lightgrey'
+      },
+      sectionHeadingStyle: {
+        paddingVertical: 10,
+        paddingHorizontal: 5
+      },
+      footerContainer: {
+        padding: 20,
+        backgroundColor: 'lightgrey'
+      }
+    
 
 
 });
