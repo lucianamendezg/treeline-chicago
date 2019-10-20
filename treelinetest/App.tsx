@@ -11,6 +11,8 @@ import {ApiScreen} from './pages/ApiScreen';
 import {ProfileScreen} from './pages/ProfileScreen';
 import {Geolocation} from './pages/Geolocation';
 import {MapScreen} from './pages/MapScreen';
+import { ScoreScreen } from './pages/ScoreScreen';
+import { UpdateScore } from './pages/UpdateScore';
 
 
 const MainNavigator = createStackNavigator({
@@ -19,7 +21,9 @@ const MainNavigator = createStackNavigator({
   Profile: {screen: ProfileScreen},
   Api: {screen: ApiScreen},
   Geo: {screen: Geolocation},
-  Map: {screen: MapScreen}
+  Map: {screen: MapScreen},
+  Score: {screen: ScoreScreen},
+  Update: {screen: UpdateScore} 
 });
 
 const App = createAppContainer(MainNavigator);
