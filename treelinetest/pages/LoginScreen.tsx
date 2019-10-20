@@ -10,8 +10,9 @@ export default class LoginScreen extends React.Component {
             <View style ={styles.logocon}>
                 <Image
                     style={styles.logo}
-                    source={require('../pages/images/download.png')}
                 />
+                    source={require('../pages/images/tree.png')}
+                /> 
                 <Text style={styles.slogan}>An app to go Green</Text>
             </View>
             <TextInput

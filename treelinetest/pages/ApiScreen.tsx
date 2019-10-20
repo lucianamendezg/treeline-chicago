@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, FlatList, TouchableOpacity, RefreshControl, Platform } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, FlatList, Button, TouchableOpacity, RefreshControl, Platform } from 'react-native';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import Stations from './stops.json';
 import { number, string } from 'prop-types';
+import { UpdateScore } from './UpdateScore';
+import {ScoreScreen} from './ScoreScreen';
 
 export class ApiScreen extends React.Component{
 
@@ -19,7 +21,7 @@ export class ApiScreen extends React.Component{
       url: ''
     }
 
-   
+
   }
   componentDidMount(){
     /*
@@ -44,14 +46,15 @@ export class ApiScreen extends React.Component{
       var yourcoords = (this.state.location.coords.latitude + ", " + this.state.location.coords.longitude );
       //this.state.minStation = yourcoords;
       this.setState({
-        minStation: this.state.stations[0].StopId
+        minStation: Stations[0].StopId
       });
       for(var index in this.state.stations){
           var curr = this.distance(yourcoords,this.state.stations[index].Location);
           if(curr <= min){
             min = curr;
             this.setState({
-              minStation: this.state.stations[index].StopId
+              minStation: this.state.stations[index].StopId,
+              minimum: min
             });
           }
       }
@@ -72,43 +75,27 @@ export class ApiScreen extends React.Component{
 
     });
   }
-    
+
   }
 
   distance(latlong1, latlong2){
-      //cleaning the data
-      latlong1 = latlong1.replace("(", "");
-      latlong1 = latlong1.replace(")", "");
-      latlong1 = latlong1.replace(" ", "");
-      latlong1 = latlong1.split(",");
-
-      lat1 = Number(latlong1[0]);
-      long1 = Number(latlong1[1]);
-
-      //cleaning the data
-      latlong2 = latlong2.replace("(", "");
-      latlong2 = latlong2.replace(")", "");
-      latlong2 = latlong2.replace(" ", "");
-      latlong2 = latlong2.split(",");
-
-      lat2 = latlong2[0];
-      long2 = latlong2[1];
-
-      //Calculating the geodesic distance in type s c r i p t
-      radius=6371;
-
-      //Calculations
-      degree_lat=(lat2-lat1)(Math.PI/180);
-      degree_lon=(long2-long1)(Math.PI/180);
-      lat_1=lat1Math.PI/180;
-      lat_2=lat2Math.PI/180;
-
-      //Calculations ++
-      a= Math.sin(degree_lat/2) * Math.sin(degree_lat/2) + Math.sin(degree_lon/2) * Math.sin(degree_lon/2) * Math.cos(lat_1) * Math.cos(lat_2);
-      b=2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-      c=radius * b;
-      return c;
-    }
+    latlong1 = latlong1.replace("(", "");
+    latlong1 = latlong1.replace(")", "");
+    latlong1 = latlong1.replace(" ", "");
+    latlong1 = latlong1.split(",");
+    lat1 = latlong1[0];
+    long1 = latlong1[1];
+    latlong2 = latlong2.replace("(", "");
+    latlong2 = latlong2.replace(")", "");
+    latlong2 = latlong2.replace(" ", "");
+    latlong2 = latlong2.split(",");
+    lat2 = latlong2[0];
+    long2 = latlong2[1];
+    var a = lat1 - lat2;
+    var b = long1 - long2;
+    var c = Math.sqrt( a*a + b*b );
+    return (c);
+  }
 
   _getLocationAsync = async () => {
     let { status } = await Permissions.askAsync(Permissions.LOCATION);
@@ -134,7 +121,12 @@ export class ApiScreen extends React.Component{
     }
     renderItem=(data)=>
     <TouchableOpacity style={styles.list}>
-    <Text>{data.item.staNm}</Text></TouchableOpacity>
+    <Button title={data.item.staNm} onPress={() => ScoreScreen.increaseScore(5)}/>
+    <Text>{data.item.rt}</Text>
+    <Text>{data.item.destNm}</Text>
+    <Text>{data.item.arrT.split('T')[1]}</Text>
+    </TouchableOpacity>
+
 
 
   render(){
@@ -152,10 +144,8 @@ export class ApiScreen extends React.Component{
          data= {this.state.dataSource}
          ItemSeparatorComponent = {this.FlatListItemSeparator}
          renderItem= {item=> this.renderItem(item)}
-         keyExtractor= {item=>item.staNm.toString()}
+         keyExtractor= {item=>item.rn.toString()}
       />
-      <Text>bhsdbgjsdhgbj {this.state.minStation}</Text>
-      <Text>bhsdbgjsdhgbj {this.state.url}</Text>
      </View>
       );
 
@@ -176,6 +166,7 @@ export class ApiScreen extends React.Component{
       list:{
         paddingVertical: 4,
         margin: 5,
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        alignItems: "center"
       }
     });

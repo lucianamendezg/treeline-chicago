@@ -9,11 +9,11 @@ export class ScoreScreen extends Component{
     static current_score = 5;
 
 
-    increaseScore(increase){
+    static increaseScore(increase){
         ScoreScreen.current_score += increase;
     }
 
-    decreaseScore(decrease){
+    static decreaseScore(decrease){
         ScoreScreen.current_score -= decrease;
     }
 
