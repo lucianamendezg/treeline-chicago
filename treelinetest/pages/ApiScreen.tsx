@@ -53,7 +53,8 @@ export class ApiScreen extends React.Component{
           if(curr <= min){
             min = curr;
             this.setState({
-              minStation: this.state.stations[index].StopId
+              minStation: this.state.stations[index].StopId,
+              minimum: min
             });
           }
       }
