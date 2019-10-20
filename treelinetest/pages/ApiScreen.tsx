@@ -12,7 +12,7 @@ export class ApiScreen extends React.Component{
     }
   }
   componentDidMount(){
-    return fetch('http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=e66c07d2df874365bf4c7c73efda651b&mapid=41450&outputType=JSON')
+    return fetch('http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=e66c07d2df874365bf4c7c73efda651b&mapid=40380&outputType=JSON')
     .then((response)=>response.json())
     .then((responseJson)=> {
       this.setState({
