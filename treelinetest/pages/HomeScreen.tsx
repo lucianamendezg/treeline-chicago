@@ -40,6 +40,12 @@ class HomeScreen extends React.PureComponent {
             this.hideMenu;
             navigate('Map');
             }}>Map</MenuItem>
+          <ManuItem onPress={() =>{
+            this.hideMenu;
+            navigate('')
+
+          }}>
+          </ManuItem>
         </Menu>
       </View>
     );
