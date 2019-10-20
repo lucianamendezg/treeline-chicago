@@ -8,19 +8,10 @@ import {ScoreScreen} from "./ScoreScreen";
 //call static current score
 export class ForestScreen extends Component {
 
+  static forest_score = 0;
+
   //functions??
-  render() {
-    return (
-      <View>
-<Image
-style={{width:400,height:400}}
-source={require('./images/forest.png')}
-/>
-    <Text style={{fontSize:20}}>
-      Green Points= {ScoreScreen.current_score}
-    </Text>
-    </View>
-render() {
+    render() {
     if (ScoreScreen.current_score<=5) {
       return(
         <View>

@@ -59,19 +59,18 @@ class HomeScreen extends React.PureComponent {
             <MenuItem onPress={() =>{
               this.hideMenu;
               navigate('Forest');
-            }}>Score</MenuItem>
+            }}>ForestScreen</MenuItem>
           <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('QR')
           }}>QR Code</MenuItem>
-          <MenuItem onPress={() =>{
+          {/* <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('ForestScreen')
-          }}>ForestScreen</MenuItem>
-          <MenuItem onPress={() =>{
+          }}>ForestScreen</MenuItem> */}
+          {/* <MenuItem onPress={() =>{
             navigate('Api');
             }}>Api</MenuItem> */}
-
             <MenuItem onPress={() =>{
             navigate('Goals');
             }}>Reedem Points</MenuItem>

@@ -15,11 +15,7 @@ import { ScoreScreen } from './pages/ScoreScreen';
 import { UpdateScore } from './pages/UpdateScore';
 import {ForestScreen} from './pages/ForestScreen';
 import {QRScreen} from './pages/QRScreen';
-<<<<<<< HEAD
-import {ForestScreen} from './pages/ForestScreen'
-=======
 import { GoalsScreen } from './pages/GoalsScreen';
->>>>>>> 09af2fd903f1dd18a48166c8d9e56e00586212fd
 
 
 const MainNavigator = createStackNavigator({
@@ -31,14 +27,9 @@ const MainNavigator = createStackNavigator({
   Map: {screen: MapScreen},
   Score: {screen: ScoreScreen},
   Update: {screen: UpdateScore},
-<<<<<<< HEAD
-  QR: {screen: QRScreen},
-  ForestScreen: {screen: ForestScreen}
-=======
   Forest: {screen: ForestScreen},
   QR: {screen: QRScreen},
   Goals: {screen: GoalsScreen}
->>>>>>> 09af2fd903f1dd18a48166c8d9e56e00586212fd
 });
 
 const App = createAppContainer(MainNavigator);
