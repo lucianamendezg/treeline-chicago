@@ -1,6 +1,7 @@
 import {StyleSheet, Button, Image, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, KeyboardAvoidingViewComponent} from "react-native";
 import {styles} from '../css/css'
 import React from 'react';
+import {ScoreScreen} from './ScoreScreen'
 
 export default class LoginScreen extends React.Component {
     render() {
@@ -15,6 +16,7 @@ export default class LoginScreen extends React.Component {
                 <Text style={styles.slogan}>An app to go Green</Text>
             </View>
             <TextInput
+                onChangeText={(text) => ScoreScreen.user_name = text}
                 placeholder="email"
                 placeholderTextColor= '#FFF'
                 returnKeyType="next"
@@ -31,8 +33,9 @@ export default class LoginScreen extends React.Component {
                 style={styles.input}
             />
             <TouchableOpacity onPress={() => {
-                navigate('Home')}
                 
+                navigate('Home')}
+
                 } style={styles.button}>
                 <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>

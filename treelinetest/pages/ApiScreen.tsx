@@ -8,6 +8,36 @@ import { number, string } from 'prop-types';
 import { UpdateScore } from './UpdateScore';
 import {ScoreScreen} from './ScoreScreen';
 
+
+
+let getcolorb = (line) => {
+  if(line == "G"){
+    return "#00ff00";
+  }
+  if(line == "Brn"){
+    return "#654321";
+  }
+  if(line == "Org"){
+    return "#ffa500";
+  }
+  if(line == "Pink"){
+    return "#ff69b4";
+  }
+  if(line == "Red"){
+    return "#ff0000";
+  }
+  if(line == "Blue"){
+    return "#0d98ba";
+  }
+  if(line == "P"){
+    return "#800080";
+  }
+  else{
+    return "#fff";
+  }
+
+}
+
 export class ApiScreen extends React.Component{
 
   constructor(props){
@@ -120,9 +150,13 @@ export class ApiScreen extends React.Component{
     );
     }
     renderItem=(data)=>
-    <TouchableOpacity style={styles.list}>
+    <TouchableOpacity style={{
+        paddingVertical: 4,
+        margin: 5,
+        backgroundColor: getcolorb(data.item.rt),
+        alignItems: "center"
+    }}>
     <Button title={data.item.staNm} onPress={() => ScoreScreen.increaseScore(5)}/>
-    <Text>{data.item.rt}</Text>
     <Text>{data.item.destNm}</Text>
     <Text>{data.item.arrT.split('T')[1]}</Text>
     </TouchableOpacity>
@@ -163,10 +197,4 @@ export class ApiScreen extends React.Component{
         alignItems: "center",
         backgroundColor: "#fff"
       },
-      list:{
-        paddingVertical: 4,
-        margin: 5,
-        backgroundColor: "#fff",
-        alignItems: "center"
-      }
     });

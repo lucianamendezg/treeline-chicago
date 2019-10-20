@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {StyleSheet,View, Text, AsyncStorage, Button} from "react-native";
+import {StyleSheet,View, Text, AsyncStorage, Button, Image} from "react-native";
 import customData from './score/score.json';
 import { number } from "prop-types";
 import {ForestScreen} from "./ForestScreen"
@@ -7,7 +7,8 @@ import {ForestScreen} from "./ForestScreen"
 
 export class ScoreScreen extends Component{
 
-    static current_score = 0;
+    static current_score = 5;
+    static user_name = "";
 
     static increaseScore(increase){
         ScoreScreen.current_score += increase;
@@ -21,9 +22,14 @@ export class ScoreScreen extends Component{
 
     render(){
         return (
-        <View>
-            <Text>Current Score: {ScoreScreen.current_score}</Text>
+            <View style={{backgroundColor: '#b2b2ff', height: '100%'}}>
+            <Image
+                    style={styles.coins}
+                    source={require('../pages/images/coins.png')}
+                />
+            <Text style={{fontSize: 40, textAlign:"center", }}>Current Score: {ScoreScreen.current_score}</Text>
         </View>
+
         );
     }
 }

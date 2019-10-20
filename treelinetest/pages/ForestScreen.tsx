@@ -1,25 +1,25 @@
+//grab points
+//algorithm to _make______forests_____
+//show the fucking stupid forest
 import React, {Component} from 'react';
 import {StyleSheet,View, Text, AsyncStorage, Image, Button} from "react-native";
 import {ScoreScreen} from "./ScoreScreen";
 
+//call static current score
 export class ForestScreen extends Component {
-  static forest_score=0;
 
-/*
-render() {
-  return(
-    <View>
-    <Image style={{width:400,height:400}}
-    source={require('./images/tree.png')}
-    />
+  //functions??
+  render() {
+    return (
+      <View>
+<Image
+style={{width:400,height:400}}
+source={require('./images/forest.png')}
+/>
     <Text style={{fontSize:20}}>
       Green Points= {ScoreScreen.current_score}
     </Text>
     </View>
-  );
-}
-}
-*/
 render() {
     if (ScoreScreen.current_score<=5) {
       return(

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import { View, Text, TouchableHighlight, Image, StyleSheet,TextInput, Button,TouchableOpacity } from 'react-native';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 import {styles} from '../css/css'
@@ -46,15 +47,19 @@ class HomeScreen extends React.PureComponent {
             this.hideMenu;
             navigate('Profile', {name: 'Jane'})}}>My Profile</MenuItem>
 
-          <MenuItem onPress={() =>{
+          {/* <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('Score')
-            }}>My Score</MenuItem>
+            }}>My Score</MenuItem> */}
 
           <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('Map')
             }}>Map</MenuItem>
+            <MenuItem onPress={() =>{
+              this.hideMenu;
+              navigate('Forest');
+            }}>Score</MenuItem>
           <MenuItem onPress={() =>{
             this.hideMenu;
             navigate('QR')
@@ -65,7 +70,11 @@ class HomeScreen extends React.PureComponent {
           }}>ForestScreen</MenuItem>
           <MenuItem onPress={() =>{
             navigate('Api');
-            }}>Api</MenuItem>
+            }}>Api</MenuItem> */}
+
+            <MenuItem onPress={() =>{
+            navigate('Goals');
+            }}>Reedem Points</MenuItem>
         </Menu>
         <View style={styles.home}>
         <Image
